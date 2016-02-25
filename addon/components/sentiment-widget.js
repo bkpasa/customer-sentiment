@@ -108,7 +108,7 @@ export default Ember.Component.extend({
   actions:{
     cancelFeedback: function(){
       //kibana log
-      this.container.lookup('global:main').logUserSentimentsQuestion({
+      this.logUserSentimentsQuestion({
                 'action': 'cancelWidget'
             });
       this.resetComponent();
@@ -119,11 +119,11 @@ export default Ember.Component.extend({
     },
     submit: function(){
       //kibana log
-      var _this = this;
+      var question = this.get('question');
       var action = this.get('choice')? 'Like':'Dislike';
       var comment = this.get('comment')==='Tell us more...'?'':this.get('comment');
       this.logUserSentimentsQuestion({
-                'question': _this.get('question'),
+                'question': question,
                 'action': action,
                 'comment': comment
             });
