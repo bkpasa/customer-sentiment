@@ -47,7 +47,7 @@ export default Ember.Component.extend({
       if(logKibana){
         //log to Kibana
         var action = this.get('choice')? 'Like':'Dislike';
-        this.container.lookup('global:main').logUserSentimentsQuestion({
+        this.logUserSentimentsQuestion({
                 'action': action
             });
       }
