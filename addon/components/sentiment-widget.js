@@ -3,7 +3,7 @@ import layout from '../templates/components/sentiment-widget';
 
 export default Ember.Component.extend({
   layout: layout,
-  question: ''
+  question: '',
   kibanaUrl: '',
   userInfo: '',
 
@@ -122,7 +122,7 @@ export default Ember.Component.extend({
       var _this = this;
       var action = this.get('choice')? 'Like':'Dislike';
       var comment = this.get('comment')==='Tell us more...'?'':this.get('comment');
-      this.logUserSentimentsQuestion({,
+      this.logUserSentimentsQuestion({
                 'question': _this.get('question'),
                 'action': action,
                 'comment': comment
