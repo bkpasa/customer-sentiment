@@ -1,0 +1,33 @@
+<div class="cs-sentiment">
+	
+	{{#if showQuestion}}
+	<div class="sentiment-cont">
+		<div class="question">Do you find this new report helpful?</div>
+		<div class="response">
+			<div class="answer">
+				<div>
+					<input type="radio" value="good" name="user vote1" id="ryes" class="{{yesClass}}">
+					<label for="ryes">Yes <i class="icon-cs-thumbsup"></i></label>
+					<input type="radio" value="bad" name="user vote1" id="rno" class="{{noClass}}">
+					<label for="rno" >No <i class="icon-cs-thumbsdown"></i></label>
+				</div>
+				{{#unless showNotes}}
+				<div class="button-cancel" {{action 'cancelFeedback'}}>Cancel</div>
+				{{/unless}}
+			</div>
+			{{#if showNotes}}
+			<div class="feedback" id="feedback" class="active">
+					<div>
+						{{input type="text" placeholder="Tell us more..." value=comment focus-out="onFocusOut" focus-in="onFocusIn" maxlength="160"}}
+					</div>
+					<div>
+						<input class="btn" type="submit" value="Submit" label="Submit" {{action 'submit'}}/>
+						<div class="button-cancel" {{action 'cancelSubmit'}}>Cancel</div>
+					</div>
+			</div>
+			{{/if}}
+		</div>
+	</div>
+	{{/if}}
+	<div class="sentiment-icon"><i class="icon-cs-thumbsup sentiment"></i></div>
+</div>
